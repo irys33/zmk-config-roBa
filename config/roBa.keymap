@@ -91,10 +91,10 @@
 
         MOUSE {
             bindings = <
-&kp RC(RG(E))  &kp RC(RG(U))     &kp RC(RG(UP_ARROW))    &kp LC(LG(I))            &kp LG(LC(T))                         &trans        &trans    &kp F12   &kp LC(MINUS)  &kp LS(LC(MINUS))
-&kp RC(RG(D))  &kp RC(RG(LEFT))  &kp RG(RC(DOWN_ARROW))  &kp RG(RC(RIGHT_ARROW))  &kp RG(RC(G))       &trans    &trans  &kp LA(LEFT)  &mkp MB1  &mkp MB2  &mkp MCLK      &trans
-&trans         &kp LC(LG(J))     &kp LC(LG(F))           &kp LC(LG(K))            &kp LC(LG(RETURN))  &trans    &trans  &trans        &trans    &trans    &trans         &trans
-&trans         &trans            &trans                  &trans                   &trans              &trans    &trans  &trans                                           &trans
+&kp RC(RG(E))  &kp RC(RG(U))     &kp RC(RG(UP_ARROW))    &kp LC(LG(I))            &kp LG(LC(T))                         &trans        &trans    &kp F12   &kp LC(MINUS)     &kp LS(LC(MINUS))
+&kp RC(RG(D))  &kp RC(RG(LEFT))  &kp RG(RC(DOWN_ARROW))  &kp RG(RC(RIGHT_ARROW))  &kp RG(RC(G))       &trans    &trans  &kp LA(LEFT)  &mkp MB1  &mkp MB2  &kp LC(UP_ARROW)  &trans
+&trans         &kp LC(LG(J))     &kp LC(LG(F))           &kp LC(LG(K))            &kp LC(LG(RETURN))  &trans    &trans  &trans        &trans    &trans    &trans            &trans
+&trans         &trans            &trans                  &trans                   &trans              &trans    &trans  &trans                                              &trans
             >;
         };
 
