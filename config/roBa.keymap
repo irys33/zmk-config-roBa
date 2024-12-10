@@ -7,14 +7,6 @@
 #define SCROLL 5
 #define NUM 6
 
-&mt {
-    flavor = "balanced";
-    quick-tap-ms = <0>;
-    tapping-term-ms = <200>;
-};
-
-&lt { tapping-term-ms = <150>; };
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -58,6 +50,25 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
         };
+
+        lt_hold_pf: lt_hold_pf {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_HOLD_PF";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        lt_balanced: lt_balanced {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_BALANCED";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -65,10 +76,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R          &kp T                                                   &kp Y        &kp U  &lt 1 I    &kp O    &kp P
-&mt LCTRL A       &kp S         &kp D         &kp F          &kp G        &kp LA(LS(NUMBER_4))    &kp LG(SPACE)      &kp H        &kp J  &kp K      &kp L    &lt 4 SEMI
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V          &kp B        &kp LEFT_BRACKET        &kp RIGHT_BRACKET  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp ESC           &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 1 SPACE  &lt 3 TAB               &kp LALT           &lt 2 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R          &kp T                                                            &kp Y                &kp U  &lt 1 I    &kp O    &kp P
+&mt LCTRL A       &kp S         &kp D         &kp F          &kp G                 &kp LA(LS(NUMBER_4))    &kp LG(SPACE)      &kp H                &kp J  &kp K      &kp L    &lt 4 SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V          &kp B                 &kp LEFT_BRACKET        &kp RIGHT_BRACKET  &kp N                &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LS(Z)         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt_balanced 1 SPACE  &lt_balanced 3 TAB      &kp LALT           &lt_hold_pf 2 ENTER                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -79,16 +90,16 @@
 &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                          &kp CARET  &kp AMPS          &kp STAR           &kp LPAR        &kp RPAR
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5        &trans    &kp TILDE  &kp PLUS   &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp PIPE
 &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans    &kp LANG2  &kp LANG1  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp GRAVE       &kp BACKSLASH
-&trans        &trans        &trans        &kp DELETE    &trans        &trans    &trans     &trans                                                          &trans
+&trans        &trans        &trans        &trans        &trans        &trans    &trans     &trans                                                          &trans
             >;
         };
 
         FUNCARROW {
             bindings = <
-&kp F11            &kp F12  &kp F13  &trans  &trans                     &trans    &trans    &trans  &trans     &trans
-&kp F1             &kp F2   &kp F3   &kp F4  &kp F5   &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&mt LEFT_SHIFT F6  &kp F7   &kp F8   &kp F9  &kp F10  &trans    &trans  &trans    &trans    &trans  &trans     &trans
-&trans             &trans   &trans   &trans  &trans   &trans    &trans  &trans                                 &trans
+&kp F11            &kp F12  &kp F13  &trans   &trans                     &trans    &trans    &trans  &trans     &trans
+&kp F1             &kp F2   &kp F3   &kp F4   &kp F5   &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&mt LEFT_SHIFT F6  &kp F7   &kp F8   &kp F9   &kp F10  &trans    &trans  &trans    &trans    &trans  &trans     &trans
+&trans             &trans   &trans   &kp DEL  &trans   &trans    &trans  &trans                                 &trans
             >;
         };
 
