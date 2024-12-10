@@ -26,6 +26,11 @@
             bindings = <&mkp RCLK>;
             key-positions = <19 20>;
         };
+
+        terminal {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <1 2>;
+        };
     };
 
     macros {
