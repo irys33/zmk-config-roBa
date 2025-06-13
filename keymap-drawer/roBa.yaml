@@ -38,13 +38,13 @@ layers:
   - LCTRL
   - LEFT WIN
   - LEFT ALT
-  - {t: '&to_layer_0 INT_HENKAN', h: '6'}
-  - {t: SPACE, h: NUM}
+  - {t: '&to_layer_0 INT_HENKAN', h: BLE}
+  - {t: SPACE, h: FUNCARROW}
   - {t: '&to_layer_0 INT_MUHENKAN', h: ARROW}
   - BACKSPACE
-  - {t: ENTER, h: FUNCTION}
+  - {t: ENTER, h: SYMBOL}
   - DEL
-  FUNCTION:
+  SYMBOL:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -88,7 +88,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - F12
-  NUM:
+  FUNCARROW:
   - '-'
   - KP 7
   - KP 8
@@ -264,7 +264,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '6':
+  BLE:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -313,9 +313,9 @@ combos:
   k: TAB
 - p: [12, 13]
   k: Sft+TAB
-- p: [11, 10]
-  k: '&to_layer_0 INT_MUHENKAN'
-- p: [20, 21]
-  k: '"'
-- p: [24, 25]
-  k: '='
+- p: [18, 19]
+  k: '&mkp LCLK'
+- p: [19, 20]
+  k: '&mkp RCLK'
+- p: [1, 2]
+  k: Gui+SPACE
