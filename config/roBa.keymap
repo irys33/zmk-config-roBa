@@ -5,7 +5,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
-
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
@@ -55,6 +54,7 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
 
@@ -98,7 +98,7 @@
 &kp LS(Z)         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt_hold_pf 1 SPACE  &lt_balanced 3 TAB        &kp LALT          &lt_hold_pf 2 ENTER                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&inc_dec_kp LC(TAB) LS(LC(TAB))>;
         };
 
         SYMBOL {
